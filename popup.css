@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-tertiary: #e9ecef;
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --border-color: #dee2e6;
+    --accent-color: #5865f2;
+    --accent-hover: #4752c4;
+    --success-color: #28a745;
+    --success-hover: #218838;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --shadow-hover: rgba(0, 0, 0, 0.15);
+    --border-radius: 8px;
+    --transition: all 0.2s ease;
+}
+
+body.dark-theme {
+    --bg-primary: #2b2d31;
+    --bg-secondary: #1e1f22;
+    --bg-tertiary: #404249;
+    --text-primary: #dbdee1;
+    --text-secondary: #b5bac1;
+    --border-color: #404249;
+    --accent-color: #5865f2;
+    --accent-hover: #4752c4;
+    --success-color: #23a55a;
+    --success-hover: #1e8449;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --shadow-hover: rgba(0, 0, 0, 0.4);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 14px;
+    line-height: 1.5;
+    min-height: 100vh;
+    transition: var(--transition);
+}
+
+.container {
+    width: 400px;
+    max-height: 600px;
+    background: var(--bg-primary);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.header {
+    background: var(--accent-color);
+    color: white;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 8px var(--shadow);
+    position: relative;
+}
+
+.icon-container {
+    width: 24px;
+    height: 24px;
+}
+
+.discord-icon {
+    width: 100%;
+    height: 100%;
+    filter: brightness(0) invert(1);
+}
+
+.header h1 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    flex: 1;
+}
+
+.theme-toggle {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    outline: none;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+.theme-icon {
+    width: 16px;
+    height: 16px;
+    transition: var(--transition);
+}
+
+body.dark-theme .theme-icon {
+    transform: rotate(180deg);
+}
+
+.content {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: var(--text-primary);
+    font-size: 13px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: 14px;
+    transition: var(--transition);
+    outline: none;
+}
+
+.form-input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(88, 101, 242, 0.2);
+}
+
+.form-input:hover:not(:focus) {
+    border-color: var(--text-secondary);
+}
+
+select.form-input {
+    cursor: pointer;
+}
+
+.output-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.output-field {
+    padding-right: 45px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 13px;
+    background: var(--bg-tertiary);
+}
+
+.copy-button {
+    position: absolute;
+    right: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 4px;
+    color: var(--text-secondary);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copy-button:hover {
+    background: var(--bg-primary);
+    color: var(--accent-color);
+}
+
+.copy-button:active {
+    transform: scale(0.95);
+}
+
+.copy-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.preview-container {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 12px;
+    margin-bottom: 16px;
+}
+
+.preview-container label {
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.preview {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+    color: var(--text-primary);
+    background: var(--bg-primary);
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    min-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.button-group {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    outline: none;
+    flex: 1;
+}
+
+.btn-secondary {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background: var(--border-color);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px var(--shadow);
+}
+
+.btn-secondary:active {
+    transform: translateY(0);
+}
+
+.copy-button.copied {
+    color: var(--success-color);
+    animation: pulse 0.3s ease;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+}
+
+.form-input, .btn, .copy-button {
+    will-change: transform, box-shadow;
+}
+
+.container {
+    animation: slideIn 0.2s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
