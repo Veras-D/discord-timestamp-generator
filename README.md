@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="icons/icon-128.png" alt="Discord Timestamp Generator Logo" width="80" height="80">
+  <img src="icons/icon.svg" alt="Discord Timestamp Generator Logo" width="80" height="80">
 </p>
 
 # Discord Timestamp Generator
